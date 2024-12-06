@@ -1,0 +1,27 @@
+import unittest
+from module_12_1 import Runner
+
+class TestClassRunner(unittest.TestCase):
+    def test_walk(self):
+        a = Runner('Pavel')
+        for _ in range(10):
+            a.walk()
+        self.assertEqual(a.distance, 50)
+
+    def test_run(self):
+        b = Runner('Sasha')
+        for _ in range(10):
+            b.run()
+        self.assertEqual(b.distance, 100)
+
+    def test_challenge(self):
+        a = Runner('Даша')
+        b = Runner('Паша')
+        for _ in range(10):
+            a.walk()
+            b.run()
+        self.assertNotEqual(b.distance,b.distance,'Значения равны!')
+
+if __name__ == '__main__':
+    unittest.main()
+
